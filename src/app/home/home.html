@@ -1,0 +1,31 @@
+
+
+
+
+
+
+
+<main class="mn">
+@for (item of product2Arr; track $index) {
+   <div class="card" style="width: 18rem;" routerLink="/details" [queryParams]="{id : item.id}">
+  <img [src]="item.image" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{item.name}}</h5>
+    <p class="card-text">$ {{item.price}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+}
+</main>
+<div class="pagination">
+  <button class="page-btn arrow" [disabled]="currentPage === 1" (click)="changePage(currentPage - 1)">←</button>
+   <!-- @for(p of pages; track p){
+  <ng-container>
+    @if(p === '...'){<span class="dots">···</span>}
+    @if(p !== '...'){<button class="page-btn" [class.active]="p === currentPage" (click)="changePage(1)">{{p}}</button>}
+  </ng-container>
+} -->
+
+  <button class="page-btn arrow" [disabled]="currentPage === totalPages" (click)="changePage(currentPage + 1)">→</button>
+</div>
+ 
