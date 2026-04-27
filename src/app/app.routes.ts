@@ -16,6 +16,10 @@ export const routes: Routes = [
         loadComponent: () => import('./details/details').then(resp => resp.Details)
     },
     {
+        path: 'menu',
+        loadComponent: () => import('./menu/menu').then(resp => resp.Menu)
+    },
+    {
         path: 'login',
         loadComponent: () => import('./login/login').then(resp => resp.Login)
     },

@@ -1,19 +1,16 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Product } from '../models/products';
 import { Helper } from '../services/Helper';
 import { Api } from '../services/Api';
-import { Product } from '../models/products';
-import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-home',
-  imports: [RouterLink, FormsModule],
-  templateUrl: './home.html',
-  styleUrl: './home.scss',
+  selector: 'app-menu',
+  imports: [],
+  templateUrl: './menu.html',
+  styleUrl: './menu.scss',
 })
-export class Home {
-constructor(private help : Helper, private api :Api, private  cdr : ChangeDetectorRef
-  ){
+export class Menu {
+  constructor(private help : Helper, private api :Api, private  cdr : ChangeDetectorRef){
    this.help.cleanString("      hello      ")
 
   }
@@ -76,8 +73,5 @@ changePage(page: number) {
   if (page >= 1 && page <= this.totalPages) this.currentPage = page;
   this.ResetProductArrAndShowProductSUpdatesArr()
 }
-
-
-
 
 }
